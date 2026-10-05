@@ -1,7 +1,7 @@
 ---
 name: b420-trade-index
 version: 1.0.0
-description: "Buy or sell a B420 index token (an onchain basket of up to 10 tokens, for example MEOW or COIN5) as an AI agent through B420IndexRouter: buy shares with ETH, sell shares for ETH, exact input only, quotes only from the v4 Quoter simulation (the pool holds no liquidity; never read slot0), first buy on an empty index at least 0.0005 ETH net. v3 stack live; the v4 stack is added here when deployed. Index holders earn ETH dividends (b420-claim skill). Creating an index is not offered to agents. Works with any signer: viem / private key, Bankr /wallet/submit, or printed raw calldata for CDP, Safe and relayers."
+description: "Buy or sell a B420 index token (an onchain basket of up to 10 tokens, for example MEOW, COIN5 or OG) as an AI agent through B420IndexRouter: buy shares with ETH, sell shares for ETH, exact input only, quotes only from the v4 Quoter simulation (the pool holds no liquidity; never read slot0), first buy on an empty index at least 0.0005 ETH net. v3 stack (MEOW, COIN5) and v4 stack (OG and every new index) live. Index holders earn ETH dividends (b420-claim skill). Creating an index is not offered to agents. Works with any signer: viem / private key, Bankr /wallet/submit, or printed raw calldata for CDP, Safe and relayers."
 homepage: https://b420.io
 api_base: https://b420.io/api
 chain: base (8453)
