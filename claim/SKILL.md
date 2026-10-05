@@ -10,6 +10,7 @@ rewards_ledger: 0x8e95B431B70094B66836074B01c380A4935B7d49
 index_factory_v3: 0xD732F8c5854ae9E6de3046ad9ecA87577e5e93AF
 index_factory_v4: 0xD408a52ff4871097A89977Ca9fc48dF0D4243293
 index_ledger_v3: 0x934654A3FCa109A6ce70B2aADbC19d34f0080Fe6
+index_ledger_v4: 0x1B66965006fbaa476fc22B8432cc232b6148E958
 fee_locker: 0x20835181fD6F4e62AA8d630A89b0e5c8676808C6
 lp_locker_v2: 0x351C934d698eB3c0683066D2fbD6CE7215573Bc4
 distributor_factory: 0x049B3Ee15c41163458073072e9573BF0fb88D5d4
@@ -102,7 +103,7 @@ details: [`../market-data/SKILL.md`](../market-data/SKILL.md#a-wallet-portfolio)
 |---|---|---|
 | Staking | StakingB420 and StakingB69, `rewardTokens()` on each | `earned(wallet, token)` |
 | Rewards tokens | `rewardsFactory.tokenCount()`, `tokenAt(i)` (2 today) | `dividendOf(wallet)`, `rewardAsset()`; `ledger.creatorClaimable(token, wallet)` |
-| Indexes | every stack in `INDEX_STACKS`: `factory.indexCount()`, `indexAt(i)` (v3: 2 today; the v4 stack joins the list when it is live) | `dividendOf(wallet)`; the stack ledger's `claimable(index, wallet, 0x0)` and `claimable(index, wallet, index)` |
+| Indexes | every stack in `INDEX_STACKS`: `factory.indexCount()`, `indexAt(i)` (v3: 2 today, v4: 1 today) | `dividendOf(wallet)`; the stack ledger's `claimable(index, wallet, 0x0)` and `claimable(index, wallet, index)` |
 | Fee locker | every currency a classic launch trades in: `GET /api/launches?limit=200` rows with `locker` set give `token` and `pairedToken` (null means WETH) | `availableFees(wallet, currency)`, once per distinct currency |
 | Distributors | `GET /api/distributors` rows with an `address`; the address must equal `distributorFor(token)` on the current or the previous distributor factory | `GET /api/distributor/[token]/claim/[wallet]`, then `claimed(currency, wallet)` per leaf |
 | Airdrops | `airdrops(token)` on the airdrop extension for each classic launch (a non-zero `merkleRoot` means one exists) | `GET /api/airdrop/[token]?account=wallet`, then `amountAvailableToClaim` |
@@ -358,6 +359,7 @@ Simulated on Base mainnet, 2026-10-05: no live airdrop (`airdrops(token).merkleR
 | Index v3 factory (enumerate indexes) | `0xD732F8c5854ae9E6de3046ad9ecA87577e5e93AF` |
 | Index v4 factory (enumerate indexes) | `0xD408a52ff4871097A89977Ca9fc48dF0D4243293` |
 | Index v3 ledger (`splitter()`) | `0x934654A3FCa109A6ce70B2aADbC19d34f0080Fe6` |
+| Index v4 ledger (`splitter()`) | `0x1B66965006fbaa476fc22B8432cc232b6148E958` |
 | ClankerFeeLocker (creator fees, claim here) | `0x20835181fD6F4e62AA8d630A89b0e5c8676808C6` |
 | LP locker v2 (slice table, factory v2 launches) | `0x351C934d698eB3c0683066D2fbD6CE7215573Bc4` |
 | LP locker v1 (slice table, factory v1 launches) | `0x0c0B04d8Bd761dA1899b1a13CD3353d0974F99D3` |

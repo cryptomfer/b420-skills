@@ -56,8 +56,8 @@ leaves link back here for those instead of restating them.**
 
 ## Pick the path (the single copy)
 
-1. For each index stack, oldest first (v3 today; v4 is appended to `INDEX_STACKS` when it is
-   deployed): `isIndex(token)` on the stack's factory. True: **index**.
+1. For each index stack, oldest first (v3, then v4; both are in `INDEX_STACKS`):
+   `isIndex(token)` on the stack's factory. True: **index**.
 2. `isRewardsToken(token)` on B420RewardsFactory `0x4f924EDB313efB9E90CAf1f768dE54E5fFcD5e31`.
    True: **rewards token**.
 3. `tokenRewards(token)` on LP locker v2 `0x351C934d698eB3c0683066D2fbD6CE7215573Bc4`, then LP

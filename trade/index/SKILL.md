@@ -9,6 +9,8 @@ index_factory_v3: 0xD732F8c5854ae9E6de3046ad9ecA87577e5e93AF
 index_factory_v4: 0xD408a52ff4871097A89977Ca9fc48dF0D4243293
 index_router_v3: 0xbcD0329e229bc620704a2e86bF4D37DB68fA8ff4
 index_hook_v3: 0x5C654E637B6bC597A655DaB90867296d5Ae76888
+index_router_v4: 0x7B519742705e71313E982dA1cC89c05C076DA4AB
+index_hook_v4: 0x3A9721075D9f183648029058549A65C684D16888
 v4_quoter: 0x0d5e0F971ED27FBfF6c2837bf31316121532048D
 ---
 
@@ -186,6 +188,8 @@ cleanly.
 | Index v4 router | `0x7B519742705e71313E982dA1cC89c05C076DA4AB` |
 | Index v3 hook (`MIN_FIRST_BUY()` = 0.0005 ETH, `INDEX_TICK_SPACING()` = 60) | `0x5C654E637B6bC597A655DaB90867296d5Ae76888` |
 | Index v3 ledger (creator and operations ETH; claims are in the claim skill) | `0x934654A3FCa109A6ce70B2aADbC19d34f0080Fe6` |
+| Index v4 hook (same views as v3, plus `pendingHolders(index)`) | `0x3A9721075D9f183648029058549A65C684D16888` |
+| Index v4 ledger (the v4 factory's `splitter()`) | `0x1B66965006fbaa476fc22B8432cc232b6148E958` |
 | V4 Quoter (the only price source) | `0x0d5e0F971ED27FBfF6c2837bf31316121532048D` |
 | Uniswap v4 PoolManager | `0x498581fF718922c3f8e6A244956aF099B2652b2b` |
 | MEOW (index, 18 decimals) | `0xd29327FC1933bC6391d225A71bc1612A6Ed4b420` |

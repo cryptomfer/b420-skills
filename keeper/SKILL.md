@@ -15,6 +15,8 @@ index_factory_v3: 0xD732F8c5854ae9E6de3046ad9ecA87577e5e93AF
 index_factory_v4: 0xD408a52ff4871097A89977Ca9fc48dF0D4243293
 index_hook_v3: 0x5C654E637B6bC597A655DaB90867296d5Ae76888
 index_ledger_v3: 0x934654A3FCa109A6ce70B2aADbC19d34f0080Fe6
+index_hook_v4: 0x3A9721075D9f183648029058549A65C684D16888
+index_ledger_v4: 0x1B66965006fbaa476fc22B8432cc232b6148E958
 lp_locker_v2: 0x351C934d698eB3c0683066D2fbD6CE7215573Bc4
 lp_locker_v1: 0x0c0B04d8Bd761dA1899b1a13CD3353d0974F99D3
 fee_locker: 0x20835181fD6F4e62AA8d630A89b0e5c8676808C6
@@ -418,6 +420,8 @@ Simulated on Base mainnet, 2026-10-05: index ledger `claimFor(MEOW, ops, ETH)` o
 | Index v4 factory (`isIndex`) | `0xD408a52ff4871097A89977Ca9fc48dF0D4243293` |
 | Index v3 hook (`flush(index)`) | `0x5C654E637B6bC597A655DaB90867296d5Ae76888` |
 | Index v3 ledger (`splitter()`, ops and creator) | `0x934654A3FCa109A6ce70B2aADbC19d34f0080Fe6` |
+| Index v4 hook (`flush(index)`, `pendingHolders(index)`) | `0x3A9721075D9f183648029058549A65C684D16888` |
+| Index v4 ledger (`splitter()`, ops and creator) | `0x1B66965006fbaa476fc22B8432cc232b6148E958` |
 | LP locker v2 (`collectRewards`, factory v2 launches) | `0x351C934d698eB3c0683066D2fbD6CE7215573Bc4` |
 | LP locker v1 (`collectRewards`, factory v1 launches) | `0x0c0B04d8Bd761dA1899b1a13CD3353d0974F99D3` |
 | Distributor factory (current) | `0x049B3Ee15c41163458073072e9573BF0fb88D5d4` |
@@ -426,8 +430,8 @@ Simulated on Base mainnet, 2026-10-05: index ledger `claimFor(MEOW, ops, ETH)` o
 | StakingB69 (receives B420) | `0x82E6b3CEE079432F31D64855ed3DD5faCA71d309` |
 | Strategic Reserve (EOA, treasury share) | `0xA3320DCaFAa124173fdf7BD18EcD85abBA325590` |
 
-The v4 index stack is not deployed yet; when it is, its hook and ledger join `INDEX_STACKS` and the
-same calls apply.
+The v4 index stack (live since 2026-10-05) is in `INDEX_STACKS`: the same calls apply to its hook
+and ledger.
 
 ## Errors you might hit
 

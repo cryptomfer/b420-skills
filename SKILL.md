@@ -1,6 +1,6 @@
 ---
 name: b420
-version: 1.0.0
+version: 1.0.1
 description: Router for every B420 skill (b420.io, a DEX and launchpad on Base), as an AI agent; trade B20s, tokenized stocks, classic launches, holder-rewards tokens and index tokens; launch a classic B20 or a holder-rewards token; stake B420 or B69; claim every kind of reward; read market and portfolio data; run the permissionless keeper calls. Router skill; pick the intention, then follow the leaf. Canonical home of the signer modes (viem / private key, Bankr /wallet/submit, printed raw calldata for CDP, Safe and relayers), the money rules, the fee policy, the address book and the list of closed products an agent never touches.
 homepage: https://b420.io
 api_base: https://b420.io/api
@@ -218,7 +218,9 @@ return (`GET /api/launch` returns the live factory, `rewardsFactory.ledger()`, t
 | Index v3 hook | `0x5C654E637B6bC597A655DaB90867296d5Ae76888` | Hook of every v3 index pool |
 | Index v3 ledger | `0x934654A3FCa109A6ce70B2aADbC19d34f0080Fe6` | The factory's `splitter()`: creator and holder ETH |
 | Index v3 router | `0xbcD0329e229bc620704a2e86bF4D37DB68fA8ff4` | `buy`, `sell` with fee entries |
-| Index v4 stack | not deployed | Being deployed; added here, to `INDEX_STACKS` and to [`trade/index/SKILL.md`](trade/index/SKILL.md) when live |
+| Index v4 hook | `0x3A9721075D9f183648029058549A65C684D16888` | Hook of every v4 index pool (multi-hop constituent routes) |
+| Index v4 ledger | `0x1B66965006fbaa476fc22B8432cc232b6148E958` | The v4 factory's `splitter()`: creator and holder ETH |
+| Index v4 router | `0x7B519742705e71313E982dA1cC89c05C076DA4AB` | `buy`, `sell` with fee entries |
 | Uniswap v4 PoolManager | `0x498581fF718922c3f8e6A244956aF099B2652b2b` | |
 | Universal Router | `0x6fF5693b99212Da76ad316178A184AB56D299b43` | Classic WETH-pair trades |
 | V4 Quoter | `0x0d5e0F971ED27FBfF6c2837bf31316121532048D` | Quotes for every v4 path |
@@ -251,6 +253,7 @@ Live tokens:
 | RWS8222 | `0x4E0fDAcc7d20C8Ce25B46bB584b5d20bc29db420` | 18 | Rewards token, NVDAc pair, holdersBps 10000; rewards router |
 | MEOW | `0xd29327FC1933bC6391d225A71bc1612A6Ed4b420` | 18 | Index (v3), holdersBps 5000; index router |
 | COIN5 | `0x7013546C860e527c1af0E6F809F95AAAe27cB420` | 18 | Index (v3), holdersBps 5000; index router |
+| OG | `0x30261039E77Af71C7E69CDb571335E9e3214B420` | 18 | Index (v4) OG Memes Index: TOSHI, TYBG, CHAD, DICKBUTT, mfercoin; holdersBps 5000; index router v4 |
 | ADA (sample classic launch) | `0xb200000000000000000000686f75bdeb7183b420` | 18 | Classic launch, WETH pair; Universal Router |
 
 The registry rows follow `allStocks()` order (fund-minimum arrays use this order).
@@ -272,7 +275,7 @@ npm ci               # the only dependency is viem, pinned in package-lock.json
 |---|---|
 | `CHAIN_ID`, `RPC`, `RPC_FALLBACK`, `API` | 8453; `RPC_URL` or `https://mainnet.base.org`; `https://base-rpc.publicnode.com` (used only without `RPC_URL`); `B420_API` or `https://b420.io/api` |
 | `ETH`, `ZERO` | `0xEeee...EEeE` (native ETH for POST /api/swap); `0x0000...0000` (native ETH in v4 pool keys, routers, ledgers) |
-| `ADDR`, `INDEX_STACKS` | The address book above (checksummed); index stacks to iterate (v3 today) |
+| `ADDR`, `INDEX_STACKS` | The address book above (checksummed); index stacks to iterate (v3 and v4) |
 | `FEE_BPS` | 100 |
 | `ERC20_ABI`, `COMMON_ERRORS_ABI` | viem `parseAbi` arrays; the second names B20, B420 and Uniswap errors |
 | `publicClient` | viem client on Base with multicall batching and rate-limit retries |
